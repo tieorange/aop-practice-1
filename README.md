@@ -40,7 +40,7 @@ $ ls -la | wc -l
 221
 ```
 
-`ls -la` показує більше елементів, бо включає приховані файли й теки, назви яких починаються з крапки.
+`ls -la` показує більше елементів, бо включає приховані файли й теки, назви яких починаються з крапки, а також записи `.` і `..`. Тут підраховано рядки виводу, включно з рядком `total` для `ls -la`.
 
 ### Навігація шляхами
 
@@ -69,7 +69,7 @@ $ ls main
 $ ls /Users/anduser/dev/terminal-lab/src/main
 ```
 
-Команда `ls src/main` працює з кореня `terminal-lab`, але після переходу в `src` шукає неіснуючий шлях `src/src/main`. Відносний шлях `main` та абсолютний шлях працюють у будь-якому поточному розташуванні.
+Команда `ls src/main` працює з кореня `terminal-lab`, але після переходу в `src` шукає неіснуючий шлях `src/src/main`. Відносний шлях `main` працює саме з теки `src`, а абсолютний шлях не залежить від поточної теки.
 
 ### GUI та повторювані дії
 
@@ -102,7 +102,7 @@ $ du -sh ~/dev/terminal-lab
 $ git --version
 git version 2.50.1 (Apple Git-155)
 
-$ git config --global --list --show-origin | grep 'user\\.'
+$ git config --global --list --show-origin | grep 'user\.'
 file:/Users/anduser/.gitconfig  user.email=tieorange@gmail.com
 file:/Users/anduser/.gitconfig  user.name=Andrii Kovalchuk
 ```
